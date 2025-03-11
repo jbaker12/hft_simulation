@@ -58,6 +58,9 @@ if __name__ == "__main__": # Add this block
     num_simulations = 100000
     num_steps = 10000
 
+    # num_simulations = 100
+    # num_steps = 100
+
     # Run multiple simulations in parallel
     with ProcessPoolExecutor() as executor:
         futures = []

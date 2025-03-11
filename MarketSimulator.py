@@ -12,6 +12,7 @@ class MarketSimulator:
 
     def add_trader(self, trader):
         self.traders[trader.trader_id] = trader
+        return trader
 
     def generate_random_order(self, trader_id):
         trader = self.traders[trader_id]
@@ -41,6 +42,7 @@ class MarketSimulator:
         self.order_id_counter += 1
         order = Order(self.order_id_counter, trader_id, order_type, price, quantity, self.time, order_style)
         self.lob.add_order(order)
+        return order
 
     def record_metrics(self):
         best_bid = self.lob.get_best_bid()

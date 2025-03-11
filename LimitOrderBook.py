@@ -6,8 +6,16 @@ class LimitOrderBook:
         self.sell_orders = []
         self.market_orders = {"buy": [], "sell": []}
         self.limit_orders = {"buy": [], "sell": []}
+        self.all_orders = []
 
     def add_order(self, order):
+        fstr = (f"Add Order: Trader: {order.trader_id}, "
+                f"Order Type: {order.order_type}, "
+                f"Order Style: {order.order_style}, "
+                f"Order Quantity: {order.quantity}, "
+                f"Order Price: {order.price}, "
+                f"Timestamp: {order.timestamp}")
+        # self.all_orders.append(fstr)
         if order.order_style == "market":
             self.market_orders[order.order_type].append(order)
             self.execute_market_order(order)
@@ -19,6 +27,13 @@ class LimitOrderBook:
                 heapq.heappush(self.sell_orders, order)
 
     def execute_market_order(self, order):
+        fstr = (f"Execute Market Order: Trader: {order.trader_id}, "
+                f"Order Type: {order.order_type}, "
+                f"Order Style: {order.order_style}, "
+                f"Order Quantity: {order.quantity}, "
+                f"Order Price: {order.price}, "
+                f"Timestamp: {order.timestamp}")
+        # self.all_orders.append(fstr)
         if order.order_type == "buy":
             while order.quantity > 0 and self.sell_orders:
                 best_sell = self.sell_orders[0]
