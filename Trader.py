@@ -8,7 +8,6 @@ class Trader:
         self.num_trades = 0
         self.profitable_trades = 0
         self.profitability_rate = 0
-        # Track market and limit order profits separately
         self.num_market_order = 0
         self.num_limit_order = 0
         self.market_order_profit = 0
@@ -22,7 +21,6 @@ class Trader:
 
         # Track profit based on order type
         if order_style == "market":
-            # print("Executing Market Order")
             self.market_order_profit += balance_change
             self.num_market_order += 1
         elif order_style == "limit":

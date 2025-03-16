@@ -1,6 +1,6 @@
 ---
 marp: true
-theme: default # Or choose a different theme like uncover, gaia, etc.
+theme: gaia # Or choose a different theme like uncover, gaia, etc.
 paginate: true
 ---
 
@@ -15,7 +15,7 @@ March 2025
 # Executive Summary
 
 - Simplification of the stock market involving Market Makers, Institutional Investors, and Retail Traders
-- The stock market is an incredibly complex system influenced by countless factors, from global economics to individual investor sentiment. This simulation aims to isolate and examine key interactions, focusing on quantity and spread
+- The stock market is an incredibly complex system influenced by countless factors, from global economics to individual investor sentiment. This simulation aims to isolate and examine key interactions, focusing on order quantities and spread
 - It employs an agent-based approach, where the agents represent the three aforementioned trader groups
 - The goal of this simulation is to analyze potential advantages for each trader category and to investigate the impact of Market Orders versus Limit Orders on profitability
 
@@ -57,12 +57,14 @@ March 2025
 ![Full image slide](presentation_images/high_level_flow.png)
 
 ---
-
 # Generate Random Order
 ![Full image slide](presentation_images/market_simulator.png)
+
+
 ---
 
 # Execute Trade
+![Full image slide](presentation_images/execute_trade.png)
 
 ---
 
@@ -80,5 +82,15 @@ March 2025
 
 ---
 
+
+
+---
+
+
+
+---
+
+# Improvements
+- Use real market data with appreciating/depreciating assets
 
 

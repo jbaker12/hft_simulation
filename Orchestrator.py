@@ -52,7 +52,7 @@ def run_single_simulation(simulation_id, num_steps, num_traders_to_make):
 if __name__ == "__main__": # Add this block
     # Initialize the list to store simulation results
     all_results = []
-    all_trader_types = {} #Store all trader type dictionaries.
+    all_trader_types = {}
 
     # Number of simulations
     num_simulations = 100000
@@ -129,6 +129,7 @@ if __name__ == "__main__": # Add this block
     avg_limit_order_profit_retail = sum(total_limit_order_profit_retail) / len(total_limit_order_profit_retail) if total_limit_order_profit_retail else 0
 
 
+    pd.set_option('display.float_format', '{:,.2f}'.format)
     # Print results for each trader type
     print("Market Maker Statistics:")
     print(f"\tNumber of Market Makers: {num_market_makers}")
@@ -167,6 +168,7 @@ if __name__ == "__main__": # Add this block
     plt.ylabel("Frequency (Log Scale)")
     plt.yscale("log")
     plt.legend()
+    plt.ticklabel_format(style='plain', axis='x')
     plt.show()
 
     # No Log
@@ -178,6 +180,7 @@ if __name__ == "__main__": # Add this block
     plt.xlabel("Profit")
     plt.ylabel("Frequency (Log Scale)")
     plt.legend()
+    plt.ticklabel_format(style='plain', axis='x')
     plt.show()
 
     # Plot combined histogram of market and limit order profits for retail traders
@@ -188,4 +191,5 @@ if __name__ == "__main__": # Add this block
     plt.xlabel("Profit")
     plt.ylabel("Frequency")
     plt.legend()
+    plt.ticklabel_format(style='plain', axis='x')
     plt.show()
